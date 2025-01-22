@@ -1,0 +1,30 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.AdminDashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Påfyldningshistorik</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Refill ID</th>
+            <th>Dato og Tid</th>
+            <th>Påfyldningstype</th>
+            <th>Ansvarlig</th>
+            <th>Kaffemaskine</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var refill in Model.RefillHistory) {
+            <tr>
+                <td>@refill.RefillID</td>
+                <td>@refill.DateTime</td>
+                <td>@refill.RefillType</td>
+                <td>@refill.Responsible</td>
+                <td>@refill.CoffeeMachineName</td>
+            </tr>
+        }
+    </tbody>
+</table>

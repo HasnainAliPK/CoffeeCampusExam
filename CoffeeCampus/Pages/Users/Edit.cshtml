@@ -1,0 +1,24 @@
+﻿@page
+@model CoffeeCampus.Pages.Users.EditModel
+
+<h1>Edit User</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="UpdatedUser.Id" />
+    <div>
+        <label>Full Name</label>
+        <input asp-for="UpdatedUser.FullName" />
+        <span asp-validation-for="UpdatedUser.FullName"></span>
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="UpdatedUser.Email" />
+        <span asp-validation-for="UpdatedUser.Email"></span>
+    </div>
+    <div>
+        <label>Department</label>
+        <input asp-for="UpdatedUser.Department" />
+        <span asp-validation-for="UpdatedUser.Department"></span>
+    </div>
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.BinEmptyingHistoryModel
+@{
+    ViewData["Title"] = "Tømningshistorik";
+}
+
+<h1>Tømningshistorik</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Emptying ID</th>
+            <th>Dato og Tid</th>
+            <th>Ansvarlig</th>
+            <th>Kaffemaskine</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emptying in Model.EmptyingHistory) {
+            <tr>
+                <td>@emptying.EmptyingID</td>
+                <td>@emptying.DateTime</td>
+                <td>@emptying.Responsible</td>
+            </tr>
+        }
+    </tbody>
+</table>

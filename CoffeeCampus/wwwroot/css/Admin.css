@@ -1,0 +1,261 @@
+﻿﻿ /* Importer Roboto fonten fra Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+/* Resetter margin og padding for alle elementer */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body grundopsætning */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f787; /* Light gray background */
+    color: #212121;
+}
+
+.container {
+    display: flex;
+}
+
+/* Header styling */
+header {
+    background-color: #ffffff;
+    color: #212121;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+    .header-left h1 {
+        margin-left: px;
+        font-size: 1.2em;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+    .back-button:hover {
+        background-color: #f0f0f0;
+    }
+
+    .back-button img {
+        width: 100%;
+        height: 100%;
+    }
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #ffffff;
+    color: #212121;
+    width: 148px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid #e0e0e0;
+}
+
+    .sidebar .logo {
+        margin-bottom: 10px;
+        width: 40px;
+    }
+
+    .sidebar img {
+        width: 55px;
+    }
+
+    .sidebar a {
+        color: #212121;
+        text-decoration: none;
+        padding: 8px 15px;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        font-size: 0.9em;
+        border-radius: 0.2em;
+        margin-bottom: 0.2em;
+        white-space: nowrap;
+    }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar a.active {
+            background-color: #e0e0e0;
+        }
+
+        .sidebar a .sidebar-icon {
+            margin-right: 10px;
+        }
+
+.zealand-logo {
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+    .zealand-logo img {
+        width: 100%;
+    }
+
+
+/* Main content styling */
+main {
+    margin-left: 148px;
+    padding: 10px 15px;
+    width: calc(100% - 148px);
+}
+
+.task {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-icon {
+    margin-right: 10px;
+}
+
+.task img {
+    width: 40px;
+    height: 40px;
+}
+
+.task-details h2 {
+    font-size: 1em;
+    margin-bottom: 4px;
+    line-height: 1.2em;
+}
+
+.task-details p {
+    font-size: 0.8em;
+    color: #757575;
+    line-height: 1.2em;
+}
+
+.task-date p {
+    text-align: right;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.filter {
+    margin: 20px 0 10px 0;
+    display: flex;
+}
+
+.filter-btn {
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .filter-btn.active {
+        background: #e0e0e0;
+    }
+
+    .filter-btn span.star-check {
+        color: green;
+    }
+
+    .filter-btn span.star-cross {
+        color: red;
+    }
+
+.task-button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+    .task-button:hover {
+        background-color: #ddd;
+    }
+
+.icons {
+    justify-content: flex-end;
+}
+
+.dropdown {
+    display: inline-block; /* Sørger for at dropdown ikke tager hele linjen */
+    position: relative; /* Til at positionere dropdown menu */
+}
+
+.dropdown-btn {
+    background: none; /* Fjerner baggrund for knappen */
+    border: none; /* Fjerner border fra knappen */
+    cursor: pointer; /* Ændrer musemarkøren til hånd */
+    padding: 0; /* Fjern padding for bedre alignment */
+    color: black; /* Standard farve */
+}
+
+    .dropdown-btn:hover {
+        color: blue; /* Farve ved hover */
+    }
+
+.dropdown-content {
+    display: none; /* Skjuler dropdown indhold standard */
+    position: absolute; /* Placerer dropdown under knappen */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* For at sikre dropdown er oven på andet indhold */
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Viser indholdet når der hoveres over */
+}

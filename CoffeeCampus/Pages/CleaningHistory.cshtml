@@ -1,0 +1,27 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.CleaningHistoryModel
+@{
+    ViewData["Title"] = "Cleaning History";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Machine</th>
+            <th>Cleaning Date and Time</th>
+            <th>Responsible Person</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model.CleaningRecords)
+        {
+            <tr>
+                <td>@record.CoffeeMachine.Building</td>
+                <td>@record.CleaningDateTime</td>
+                <td>@record.ResponsiblePerson</td>
+            </tr>
+        }
+    </tbody>
+</table>

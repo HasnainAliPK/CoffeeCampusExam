@@ -1,0 +1,39 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.RegisterCleaningModel
+@{
+    ViewData["Title"] = "Register Cleaning";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Input.CoffeeMachineID"></label>
+                 <select asp-for="Input.CoffeeMachineID" class="form-control" >
+                    <option value="">Select a machine</option>
+                     @foreach (var machine in Model.CoffeeMachines)
+                      {
+                          <option value="@machine.CoffeeMachineID">@machine.Building</option>
+                      }
+                 </select>
+                 <span asp-validation-for="Input.CoffeeMachineID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.CleaningDateTime"></label>
+                <input asp-for="Input.CleaningDateTime" type="datetime-local" class="form-control" />
+                <span asp-validation-for="Input.CleaningDateTime" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register Cleaning</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

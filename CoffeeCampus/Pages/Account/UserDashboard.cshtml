@@ -1,0 +1,146 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.UserDashboardModel
+@{
+    ViewData["Title"] = "Bruger Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zealand Admin Forside</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f3ec;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f7f787;
+            border-bottom: 1px solid #ddd;
+        }
+
+            header h1 {
+                font-size: 2rem;
+                margin-left: 10px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+        .welcome {
+            padding: 20px;
+            font-size: 1.5rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+            .card h2 {
+                font-size: 1.2rem;
+                margin: 0 0 10px;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+        .placeholder {
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="/images/Kaffe.png">
+        <img src="/images/Zealand.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div style="display: flex; justify-content: flex-end;">
+            <i style="font-size:24px" class="fa">&#xf01c;</i>
+            <i style="font-size:24px" class="fa">&#xf0f3;</i>
+        </div>
+    </header>
+    <!-- Welcome Message -->
+    <div class="welcome">
+        Velkommen, Bruger
+    </div>
+
+    <!-- Cards Section -->
+    <div class="card-container">
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #1</h2>
+            <p>Updated 1 day ago</p>
+            <p>Location: Cafeteria</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #2</h2>
+            <p>Updated 3 days ago</p>
+            <p>Location: Outside Cafeteria</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #3</h2>
+            <p>Updated 2 days ago</p>
+            <p>Location: Reception</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #4</h2>
+            <p>Updated 5 days ago</p>
+            <p>Location: Building B</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #5</h2>
+            <p>Updated 2 hours ago</p>
+            <p>Location: Building D</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #6</h2>
+            <p>Updated 1 days ago</p>
+            <p>Location: Building C</p> 
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #7</h2>
+            <p>Updated 3 days ago</p>
+            <p>Location: Building ??</p>
+        </div>
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kaffemaskine #8</h2>
+            <p>Updated 10 days ago</p>
+            <p>Location: Building ??</p>
+        </div>
+    </div>
+</body>
+</html>

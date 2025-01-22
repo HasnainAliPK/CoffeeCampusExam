@@ -1,0 +1,140 @@
+﻿@page
+@model CoffeeCampus.Pages.Account.AdminDashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zealand Admin Forside</title>
+    <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f3ec;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f7f787;
+            border-bottom: 1px solid #ddd;
+        }
+
+            header h1 {
+                font-size: 2rem;
+                margin-left: 10px;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+        .welcome {
+            padding: 20px;
+            font-size: 1.5rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+            .card h2 {
+                font-size: 1.2rem;
+                margin: 0 0 10px;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+        .placeholder {
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="/images/Kaffe.png">
+        <img src="/images/Zealand.png">
+
+        <div class="icons">
+            <i style="font-size:24px" class="fa"></i>
+            <i style="font-size:24px" class="fa"></i>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <i style="font-size:24px" class="fa"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/Account/AdminRegistration">Registrer Admin</a>
+                    <a href="/Account/CreateUser">Registrer Bruger</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Welcome Message -->
+    <div class="welcome">
+        Velkommen, Admin
+    </div>
+    <!-- Cards Section -->
+    
+    
+    <div class="card-container">
+    <a href="/Account/KaffeMaskine1" class="card-link">
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kantinen</h2>
+            <p>Updated 2 days ago</p>
+        </div>
+    </a>
+    <a href="/Account/KaffeMaskine2" class="card-link">
+        <div class="card">
+            <div class="placeholder"></div>
+            <h2>Kantinen</h2>
+            <p>Updated 2 days ago</p>
+        </div>
+    </a>
+    <a href="/Account/KaffeMaskine3" class="card-link">
+      <div class="card">
+          <div class="placeholder"></div>
+          <h2>Reception</h2>
+          <p>Updated 2 days ago</p>
+      </div>
+    </a>
+    <a href="/Account/KaffeMaskine4" class="card-link">
+        <div class="card">
+          <div class="placeholder"></div>
+          <h2>Bygning B</h2>
+          <p>Updated 2 days ago</p>
+        </div>
+    </a>
+</div>
+      
+    </div>
+</body>
+</html>

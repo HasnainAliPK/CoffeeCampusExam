@@ -1,0 +1,10 @@
+﻿@page
+@model CoffeeCampus.Pages.Users.DeleteModel
+
+<h1>Delete User</h1>
+<p>Are you sure you want to delete @Model.UserToDelete.FullName?</p>
+
+<form method="post">
+    <button type="submit">Yes</button>
+    <a asp-page="Index">Cancel</a>
+</form>

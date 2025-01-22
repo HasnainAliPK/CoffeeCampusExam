@@ -1,0 +1,39 @@
+﻿@model List<CoffeeCampus.Models.Refill>
+
+@{
+   ViewData["Title"] = "Kaffemaskine Statistik";
+}
+<h1>Kaffemaskine Statistik</h1>
+
+<p>Total kaffe brugt: @ViewBag.Usage</p>
+
+ <form method="post" action="@Url.Action("Statistics")">
+        <input type="hidden" name="machineId" value="@ViewContext.RouteData.Values["machineId"]" />
+         <label for="refillAmount">Refill Amount:</label>
+         <input type="number" name="refillAmount" required/>
+        <button>Opret Log</button>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <table>
+      <thead>
+        <tr>
+              <th>Dato</th>
+            <th>Mængde</th>
+        </tr>
+       </thead>
+       <tbody>
+        @foreach (var log in Model)
+          {
+            <tr>
+              <td>@log.RefillDate</td>
+               <td>@log.RefillAmount</td>
+            </tr>
+         }
+       </tbody>
+   </table>
+} 
+else {
+   <p>No refill logs found.</p>
+}

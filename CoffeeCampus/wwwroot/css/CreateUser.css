@@ -1,0 +1,92 @@
+﻿/* Generelle indstillinger */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F787;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for formularen */
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Formularens titel */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #555;
+}
+
+/* Formularen */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Input-felter */
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+    /* Hover-effekt og fokus på input og dropdown */
+    input:focus, select:focus {
+        border-color: #007bff;
+        outline: none;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+/* Dropdown-menuen */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='gray' d='M0 3l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Submit-knap */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Hover-effekt på knappen */
+    button:hover {
+        background-color: #0056b3;
+    }
