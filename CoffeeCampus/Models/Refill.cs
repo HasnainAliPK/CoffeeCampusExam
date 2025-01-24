@@ -2,7 +2,7 @@
 using System.Reflection.PortableExecutable;
 namespace CoffeeCampus.Models
 {
-    public class Refill
+    public class Refill //Opfyldning
     {
         public int RefillID { get; set; }
         public DateTime RefillDate { get; set; }
@@ -12,7 +12,7 @@ namespace CoffeeCampus.Models
         public virtual CoffeeMachine CoffeeMachine { get; set; }
         public virtual User User { get; set; }
 
-        public string Responsible { get; set; } // Hvem der har gjort det//slime
+        public string Responsible { get; set; } // Hvem der har gjort det
         public int RefillAmount { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CoffeeCampus.Models
 {
-    public class Service
+    public class Service //Service
     {
         public int ServiceID { get; set; }
         public DateTime DateTime { get; set; }

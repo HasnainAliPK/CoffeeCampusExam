@@ -2,7 +2,7 @@
 
 namespace CoffeeCampus.Models
 {
-    public class ServiceLog
+    public class ServiceLog //Service Log bog
     {
         public int Id { get; set; }
         public DateTime ServiceDate { get; set; }

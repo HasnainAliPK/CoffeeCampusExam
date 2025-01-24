@@ -7,7 +7,7 @@ namespace CoffeeCampus.Data
 {
     public class CoffeeCampusDbContext : IdentityDbContext<User, IdentityRole, string>
     {
-        public CoffeeCampusDbContext(DbContextOptions<CoffeeCampusDbContext> options)
+        public CoffeeCampusDbContext(DbContextOptions<CoffeeCampusDbContext> options) //Database konstruktor
             : base(options) {
         }
 

@@ -2,16 +2,12 @@
 
 namespace CoffeeCampus.Models
 {
-    public class User : IdentityUser // Removed  , IApplicationUser
+    public class User : IdentityUser //User rollefordeling
     {
         public string FullName { get; set; }
        
         public string Department { get; set; }
-        // public string AdminId { get; set; } // Remove AdminId
-
-        // Keep the bool props if needed for your application.
-       
-        public bool PhoneNumberConfirmed { get; set; } //Add PhoneNumberConfirmed
+        public bool PhoneNumberConfirmed { get; set; } 
         public bool TwoFactorEnabled { get; set; }
         public bool LockoutEnabled { get; set; }
     }

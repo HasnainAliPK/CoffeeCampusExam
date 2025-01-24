@@ -12,6 +12,6 @@
         public string ResponsiblePersonId { get; set; }
         public User ResponsiblePerson { get; set; }
 
-        public DateTime? ReminderSentDateTime { get; set; }
+        public DateTime? ReminderSentDateTime { get; set; } //notifikation reminder
     }
 }

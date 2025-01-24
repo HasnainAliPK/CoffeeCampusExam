@@ -13,16 +13,16 @@ namespace CoffeeCampus.Controllers
     {
         private readonly MachineCleaningService _machineCleaningService;
         private readonly CoffeeMachineStatisticsService _coffeeMachineStatisticsService;
-        private readonly CoffeeCampusDbContext _context; // Tilføj denne linje
+        private readonly CoffeeCampusDbContext _context; 
 
-        public MachineController(
+        public MachineController( //Controller Konstruktor
             MachineCleaningService machineCleaningService,
             CoffeeMachineStatisticsService coffeeMachineStatisticsService,
-            CoffeeCampusDbContext context) // Tilføj context som parameter
+            CoffeeCampusDbContext context) 
         {
             _machineCleaningService = machineCleaningService;
             _coffeeMachineStatisticsService = coffeeMachineStatisticsService;
-            _context = context; // Tildel til feltet
+            _context = context; 
         }
 
         [HttpPost]
