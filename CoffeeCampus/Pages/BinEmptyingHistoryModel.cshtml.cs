@@ -11,19 +11,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CoffeeCampus.Pages.Account
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")] //Attribut beskytter metoder og kontroller ved at kræve godkendelse 
     public class BinEmptyingHistoryModel : PageModel
     {
         private readonly CoffeeCampusDbContext _context;
 
-        public BinEmptyingHistoryModel(CoffeeCampusDbContext context)
+        public BinEmptyingHistoryModel(CoffeeCampusDbContext context) //Konstruktor
         {
             _context = context;
         }
 
         public List<BinEmptyingViewModel>
     EmptyingHistory
-        { get; set; } = new();
+        { get; set; } = new(); //Tom liste som holder styr på historikken for affaldtømninger
 
         public async Task<IActionResult> OnGetAsync(string coffeemachineId = null, string userId = null, DateTime? startDate = null, DateTime? endDate = null)
         {
@@ -32,21 +32,21 @@ namespace CoffeeCampus.Pages.Account
                  .AsQueryable();
 
             // Filtering
-            if (!string.IsNullOrEmpty(coffeemachineId))
+            if (!string.IsNullOrEmpty(coffeemachineId)) //Filtrering af Kaffemaskine
                 query = query.Where(e => e.CoffeeMachineID.ToString() == coffeemachineId);
 
-            if (!string.IsNullOrEmpty(userId))
+            if (!string.IsNullOrEmpty(userId)) //Filtrering af Responsible
                 query = query.Where(e => e.Responsible == userId);
 
-            if (startDate.HasValue)
+            if (startDate.HasValue) //Filtrering af startdato
                 query = query.Where(e => e.DateTime >= startDate.Value);
 
-            if (endDate.HasValue)
+            if (endDate.HasValue) //Filtrering af slutdato
                 query = query.Where(e => e.DateTime <= endDate.Value);
 
 
             // Map to ViewModel
-            EmptyingHistory = await query
+            EmptyingHistory = await query //For at se affaldtømnning historikken
                 .Select(e => new BinEmptyingViewModel
                 {
                     EmptyingID = e.EmptyingID, // Access the correct property

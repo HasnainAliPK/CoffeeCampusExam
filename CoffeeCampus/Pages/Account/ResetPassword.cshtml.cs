@@ -31,7 +31,7 @@ namespace CoffeeCampus.Pages.Account
 
         }
 
-        public ResetPasswordModel(UserManager<User> userManager) {
+        public ResetPasswordModel(UserManager<User> userManager) {//Konstruktor
             _userManager = userManager;
         }
 
@@ -49,7 +49,7 @@ namespace CoffeeCampus.Pages.Account
                 return Page();
             }
 
-            // 2. her giver den en password reset token (har ikke testet endnu)
+            // 2. her giver den en password reset token 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
             // 3. Resetter passwordet 

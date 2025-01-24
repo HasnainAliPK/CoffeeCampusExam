@@ -16,7 +16,7 @@ namespace CoffeeCampus.Pages.Account
     {
         private readonly CoffeeCampusDbContext _context;
 
-        public AdminDashboardModel(CoffeeCampusDbContext context) {
+        public AdminDashboardModel(CoffeeCampusDbContext context) { //Konstruktor
             _context = context;
         }
 

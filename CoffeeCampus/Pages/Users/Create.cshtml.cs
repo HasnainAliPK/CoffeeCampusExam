@@ -12,7 +12,7 @@ namespace CoffeeCampus.Pages.Users
         [BindProperty]
         public User NewUser { get; set; }
 
-        public CreateModel(CoffeeCampusDbContext context) {
+        public CreateModel(CoffeeCampusDbContext context) {//Konstruktor
             _context = context;
         }
 

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace CoffeeCampus.Pages.Account
 {
-    [AllowAnonymous]
+    [AllowAnonymous] //Uden godkendelse = alle brugere uanset om de er logget in eller ej kan få adgang
     public class ConfirmEmailModel : PageModel
     {
         private readonly UserManager<User> _userManager;
 
         public string ErrorMessage { get; set; } // Show an error message
 
-        public ConfirmEmailModel(UserManager<User> userManager)
+        public ConfirmEmailModel(UserManager<User> userManager) //Konstruktor
         {
             _userManager = userManager;
         }
@@ -22,13 +22,13 @@ namespace CoffeeCampus.Pages.Account
         public async Task<IActionResult> OnGetAsync(string userId, string token)
         {
 
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(token))
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(token)) //Hvis userid eller token ikke kan findes
             {
                 ErrorMessage = "Invalid verification link.";
                 return RedirectToPage("./Login");
             }
 
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userId); //Hvis user er null
             if (user == null)
             {
                 ErrorMessage = "Invalid verification link.";

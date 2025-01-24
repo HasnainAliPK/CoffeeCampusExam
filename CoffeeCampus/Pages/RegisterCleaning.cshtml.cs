@@ -13,21 +13,21 @@ using System.Threading.Tasks;
 
 namespace CoffeeCampus.Pages.Account
 {
-    [Authorize]
-    public class RegisterCleaningModel : PageModel
+    [Authorize] //Attribut beskytter metoder og kontroller ved at kræve godkendelse 
+    public class RegisterCleaningModel : PageModel 
     {
         private readonly CoffeeCampusDbContext _context;
-        private readonly UserManager<User> _userManager; // Use UserManager<User>
+        private readonly UserManager<User> _userManager; // CRUD
 
 
-        public RegisterCleaningModel(CoffeeCampusDbContext context, UserManager<User> userManager) // inject UserManager<User>
+        public RegisterCleaningModel(CoffeeCampusDbContext context, UserManager<User> userManager) //Konstruktor 
         {
             _context = context;
             _userManager = userManager;
         }
 
 
-        [BindProperty]
+        [BindProperty] //Forbinder data fra Database til UserManager
         public InputModel Input { get; set; }
 
         public List<CoffeeMachine> CoffeeMachines { get; set; }
@@ -47,7 +47,7 @@ namespace CoffeeCampus.Pages.Account
 
 
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync() //Metode for at vise alle maskinerne i en liste
         {
             CoffeeMachines = await _context.CoffeeMachines.ToListAsync();
         }
@@ -55,7 +55,7 @@ namespace CoffeeCampus.Pages.Account
         public async Task<IActionResult> OnPostAsync()
         {
 
-            if (!ModelState.IsValid) return Page(); // Return if model state is not valid.
+            if (!ModelState.IsValid) return Page(); 
 
             var user = await _userManager.GetUserAsync(User); // Get the user
 

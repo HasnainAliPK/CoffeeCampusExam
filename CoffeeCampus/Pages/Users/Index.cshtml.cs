@@ -12,11 +12,11 @@ namespace CoffeeCampus.Pages.Users
 
         public List<User> Users { get; set; }
 
-        public IndexModel(CoffeeCampusDbContext context) {
+        public IndexModel(CoffeeCampusDbContext context) { //Konstruktor
             _context = context;
         }
 
-        public void OnGet() {
+        public void OnGet() { //Metode til at tilføje users til databasen
             Users = _context.Users.ToList();
         }
     }

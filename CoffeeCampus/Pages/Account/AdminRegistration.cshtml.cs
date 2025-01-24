@@ -43,14 +43,14 @@ namespace CoffeeCampus.Pages.Account
 
         }
 
-        public AdminRegistrationModel(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public AdminRegistrationModel(UserManager<User> userManager, RoleManager<IdentityRole> roleManager) //Konstruktor
         {
             _userManager = userManager;
             _roleManager = roleManager;
         }
 
 
-        public void OnGet()
+        public void OnGet() //Tom OnGet metode
         {
         }
 

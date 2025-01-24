@@ -10,22 +10,22 @@ using System.Threading.Tasks;
 
 namespace CoffeeCampus.Pages.Account
 {
-    [Authorize]
+    [Authorize] //Attribut beskytter metoder og kontroller ved at kræve godkendelse 
     public class CleaningHistoryModel : PageModel
     {
         private readonly CoffeeCampusDbContext _context;
 
-        public CleaningHistoryModel(CoffeeCampusDbContext context) {
+        public CleaningHistoryModel(CoffeeCampusDbContext context) { //Konstruktur
             _context = context;
         }
 
         public IList<MachineCleaning> CleaningRecords { get; set; }
 
-        public async Task OnGetAsync() {
+        public async Task OnGetAsync() { //Metode til at få en liste af rengøring
             CleaningRecords = await _context.MachineCleanings
-                .Include(c => c.CoffeeMachine)
-                 .Include(c => c.ResponsiblePerson) // Updated to User
-                .OrderByDescending(c => c.CleaningDateTime)
+                .Include(c => c.CoffeeMachine) //Inkluder alle Kaffemaskienr
+                 .Include(c => c.ResponsiblePerson) // Inkluder alle ResposiblePerson
+                .OrderByDescending(c => c.CleaningDateTime) //Filtrer efter seneste først
                 .ToListAsync();
         }
     }

@@ -12,11 +12,11 @@ namespace CoffeeCampus.Pages.Users
         [BindProperty]
         public User UserToDelete { get; set; }
 
-        public DeleteModel(CoffeeCampusDbContext context) {
+        public DeleteModel(CoffeeCampusDbContext context) { //Konstruktor
             _context = context;
         }
 
-        public IActionResult OnGet(string id) {
+        public IActionResult OnGet(string id) { //Metode til at finde User til at slette
             UserToDelete = _context.Users.FirstOrDefault(u => u.Id == id);
 
             if (UserToDelete == null) {
@@ -26,7 +26,7 @@ namespace CoffeeCampus.Pages.Users
             return Page();
         }
 
-        public IActionResult OnPost() {
+        public IActionResult OnPost() { //Metoden til at slette en user
             var user = _context.Users.FirstOrDefault(u => u.Id == UserToDelete.Id);
             if (user != null) {
                 _context.Users.Remove(user);

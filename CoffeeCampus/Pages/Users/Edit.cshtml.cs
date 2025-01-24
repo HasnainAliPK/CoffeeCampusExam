@@ -12,27 +12,27 @@ namespace CoffeeCampus.Pages.Users
         [BindProperty]
         public User UpdatedUser { get; set; }
 
-        public EditModel(CoffeeCampusDbContext context) {
+        public EditModel(CoffeeCampusDbContext context) { //Ionstruktor
             _context = context;
         }
 
-        public IActionResult OnGet(string id) {
+        public IActionResult OnGet(string id) { //Metode for at finde den opdateret user
             UpdatedUser = _context.Users.FirstOrDefault(u => u.Id == id);
 
-            if (UpdatedUser == null) {
+            if (UpdatedUser == null) { //Hvis user ikke fundet
                 return NotFound();
             }
 
             return Page();
         }
 
-        public IActionResult OnPost() {
+        public IActionResult OnPost() { //Metode til at opdatere user med FullName, Email, Department og en Emailconfirmed
             if (!ModelState.IsValid) {
                 return Page();
             }
 
             var user = _context.Users.FirstOrDefault(u => u.Id == UpdatedUser.Id);
-            if (user == null) {
+            if (user == null) { //Hvis den opdaterede user ikke kunne findes
                 return NotFound();
             }
 

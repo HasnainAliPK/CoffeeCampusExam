@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace CoffeeCampus.Pages.Account
 {
-    [AllowAnonymous]
+    [AllowAnonymous] //Uden godkendelse = alle brugere uanset om de er logget in eller ej kan få adgang
     public class LoginModel : PageModel
     {
         private readonly SignInManager<User> _signInManager;
 
 
-        public LoginModel(SignInManager<User> signInManager)
+        public LoginModel(SignInManager<User> signInManager) //Konstruktor
         {
             _signInManager = signInManager;
         }
@@ -35,11 +35,11 @@ namespace CoffeeCampus.Pages.Account
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Remember me?")] //"Remember me" knappen
             public bool RememberMe { get; set; }
         }
 
-        public void OnGet(string returnUrl = null)
+        public void OnGet(string returnUrl = null) //Metode til håndtering af fejlmeddelelser
         {
             ReturnUrl = returnUrl ?? "/";
             ErrorMessage = TempData["ErrorMessage"] as string;
@@ -66,11 +66,11 @@ namespace CoffeeCampus.Pages.Account
 
                 if (user != null)
                 {
-                    if (await _signInManager.UserManager.IsInRoleAsync(user, "Admin"))
+                    if (await _signInManager.UserManager.IsInRoleAsync(user, "Admin")) //Admin = AdminDashboard
                     {
                         return LocalRedirect(returnUrl ?? "/Account/AdminDashboard");
                     }
-                    else if (await _signInManager.UserManager.IsInRoleAsync(user, "User"))
+                    else if (await _signInManager.UserManager.IsInRoleAsync(user, "User")) //User = Userdashboard
                     {
                         return LocalRedirect(returnUrl ?? "/Account/UserDashboard");
                     }
